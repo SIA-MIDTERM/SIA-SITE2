@@ -40,7 +40,7 @@ public function addTeacher(Request $request)
                 'firstname' => 'required|alpha:max:50',
                 'middlename' => 'required|alpha:max:50',
                 'bday' => 'date',
-                'age' => 'required|int:gt:18 years'
+                'age' => 'required|integer|min:18'
             ])  
         ];
         $this->validate($request, $rules);
@@ -58,7 +58,7 @@ public function updateTeachersInfo(Request $request, $id)
                 'firstname' => 'required|alpha:max:50',
                 'middlename' => 'required|alpha:max:50',
                 'bday' => 'date',
-                'age' => 'required|int:gt:18 years'
+                'age' => 'required|integer|min:18'
             ])  
         ];
         $this->validate($request, $rules);
